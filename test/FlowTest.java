@@ -1,16 +1,15 @@
-import core.RunEngine;
+import core.Engine;
 import core.SeqFlow;
 import core.Status;
 import core.def.Flow;
 import core.def.Report;
 
-import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class FlowTest {
     public static void main(String[] args) {
-        var rsp = new RunEngine().run(new SeqFlow().withName("hello world").then((Flow) ctx -> {
+         new Engine().run(new SeqFlow().withName("hello world").then((Flow) ctx -> {
             System.out.print("Hello "); ctx.put("Hello", "World!");
             return new Report() {
                 @Override public Map<String, Object> getContext() {
