@@ -6,14 +6,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-public class SeqFlow implements Flow, Step {
+public class Flow implements core.def.Flow, Step {
     private final List<Work> chain = new ArrayList<>();
 
-    @Override public SeqFlow withName(String name) {
+    @Override public Flow withName(String name) {
         return this;
     }
 
-    @Override public SeqFlow then(Work nextWork) {
+    @Override public Flow then(Work nextWork) {
         chain.add(nextWork);
         return this;
     }
@@ -29,5 +29,5 @@ public class SeqFlow implements Flow, Step {
         return rsp;
     }
 
-    public SeqFlow() { }
+    public Flow() { }
 }

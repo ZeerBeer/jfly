@@ -1,4 +1,7 @@
 package core.def;
 
-public interface Flow extends Work {
+import java.util.Map;
+
+public interface Flow {
+    Report execute(Map<String, Object> ctx);
 }
